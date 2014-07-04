@@ -2,7 +2,7 @@
 
     function db() {
         return new DB\SQL(
-                'mysql:host=localhost;port=3306;dbname=meloman',
+                'mysql:host=127.0.0.1;port=8889;dbname=meloman',
                 'root',
                 'root'
         );
@@ -10,7 +10,7 @@
     }
 
 class song{
-
+        /* Get all songs */
         function getSongs(){
                 $db = db();
                 $db->begin();
@@ -18,7 +18,7 @@ class song{
 
                 return $data;
         }
-
+        /* Get only one songs by ID */
         function getSong($id_song){
 
                 $db = db();
@@ -28,7 +28,7 @@ class song{
 
                 return $data;
         }
-
+        /* Get all songs by tag name */
         function getSongTag($tag){
 
                 $db = db();
@@ -41,7 +41,7 @@ class song{
                 return $data;
         }
 
-
+        /* Get all song by search name ( on title_song, author_song, decription_song, tag_sound) */
         function getSongSearch($search){
 
                 $db = db();

@@ -1,4 +1,7 @@
 <?php
+header("Access-Control-Allow-Origin: http://127.0.0.1:9000");
+?>
+<?php
 
 $f3=require('framework/base.php');
 

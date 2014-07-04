@@ -1,23 +1,22 @@
 <?php
 
-class SongController{
+class CategoryController{
 
         private $model = null;
         public function __construct(){
-                $this->model = new song();
+                $this->model = new category();
         }
 
-        // Display all movies
+        // Display all song
         public function actionFind(){
                 
-                $data = $this->model->getSong();
+                $data = $this->model->getCategorys();
 
                 if (!empty($data)):
                         Api::response(200, $data);
                 else:
-                        Api::response(204, 'Nosong');
+                        Api::response(204, 'No caegory');
                 endif;
         }
-
 
 }
