@@ -9,8 +9,9 @@ class CategoryController{
 
         // Display all song
         public function actionFind(){
+                $id_category = F3::get('PARAMS.category');
                 
-                $data = $this->model->getCategorys();
+                $data = $this->model->getCategory($id_category);
 
                 if (!empty($data)):
                         Api::response(200, $data);

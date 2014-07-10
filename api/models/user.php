@@ -14,7 +14,7 @@ class user{
         function getUsers(){
                 $db = db();
                 $db->begin();
-                $data = $db->exec('SELECT * FROM user');
+                $data = $db->exec('SELECT * FROM m_user');
 
                 return $data;
         }
@@ -23,7 +23,7 @@ class user{
 
                 $db = db();
                 $db->begin();
-                $data = $db->exec('SELECT * FROM user 
+                $data = $db->exec('SELECT * FROM m_user 
                                    WHERE id_user = ' . $id_user .' LIMIT 1');
 
                 return $data;
