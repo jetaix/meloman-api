@@ -1,0 +1,30 @@
+<?php
+
+    function db() {
+        return new DB\SQL(
+                'mysql:host=127.0.0.1;port=8889;dbname=meloman',
+                'root',
+                'root'
+        );
+        $db = $this->db();
+    }
+
+class artist {
+        /* Get all songs */
+        function getArtists(){
+                $db = db();
+                $db->begin();
+                $data = $db->exec(' SELECT * 
+                                    FROM m_song
+                                    INNER JOIN m_category
+                                    ON m_category.id_category = m_song.fk_id_category
+                                    INNER JOIN m_user
+                                    ON m_user.id_user = m_song.fk_id_user
+                                    INNER JOIN m_bg
+                                    ON m_bg.id_bg = m_song.fk_id_bg');
+
+                return $data;
+        }
+
+
+}

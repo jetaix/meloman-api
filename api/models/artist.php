@@ -9,14 +9,17 @@
         $db = $this->db();
     }
 
-class category{
-        /* Get all category */
-        function getCategory($id_category){
+class artist {
+        /* Get all songs */
+        function getArtistSong($name_artist){
                 $db = db();
                 $db->begin();
-                $data = $db->exec('SELECT * FROM m_song WHERE fk_id_category = '.$id_category);
+                $data = $db->exec(' SELECT * 
+                                    FROM m_song
+                                    WHERE artist_song like "%'.$name_artist.'%"');
 
                 return $data;
         }
+
 
 }
